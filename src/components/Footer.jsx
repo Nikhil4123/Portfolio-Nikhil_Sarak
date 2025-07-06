@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://www.linkedin.com/in/nikhil-sarak-463a04256/" 
+                href="https://www.linkedin.com/in/nikhilsarak/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-[#1A1A1A] hover:bg-[#00B894] p-3 rounded-lg transition-colors border border-[#2F2F2F]"
@@ -30,12 +30,22 @@ const Footer = () => {
                 <FaLinkedin />
               </a>
               <a 
-                href="https://github.com/Nikhil0123" 
+                href="https://github.com/Nikhil4123" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-[#1A1A1A] hover:bg-[#00B894] p-3 rounded-lg transition-colors border border-[#2F2F2F]"
               >
                 <FaGithub />
+              </a>
+              <a 
+                href="https://leetcode.com/u/Nikhilsarak/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#1A1A1A] hover:bg-[#00B894] p-3 rounded-lg transition-colors border border-[#2F2F2F]"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.653 1.653 0 0 0 0 2.227 1.653 1.653 0 0 0 2.227 0L11.476 9.53l4.847-5.163a1.374 1.374 0 0 0 0-1.944 1.374 1.374 0 0 0-1.944 0z"/>
+                </svg>
               </a>
               <a 
                 href="mailto:nikhilsarak612w@gmail.com" 

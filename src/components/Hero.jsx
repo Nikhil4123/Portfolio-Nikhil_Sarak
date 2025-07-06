@@ -52,7 +52,7 @@ const Hero = () => {
                 <FaEnvelope className="text-[#00B894]" /> Email Me
               </a>
               <a
-                href="https://www.linkedin.com/in/nikhil-sarak-463a04256/"
+                href="https://www.linkedin.com/in/nikhilsarak/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#00B894] text-white px-5 py-3 rounded-full font-medium hover:bg-[#00D9A5] transition-all hover:scale-105"
@@ -60,12 +60,22 @@ const Hero = () => {
                 <FaLinkedin /> LinkedIn
               </a>
               <a
-                href="https://github.com/Nikhil0123"
+                href="https://github.com/Nikhil4123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#1A1A1A] border border-[#2F2F2F] text-white px-5 py-3 rounded-full font-medium hover:border-[#00B894] transition-all hover:scale-105"
               >
                 <FaGithub className="text-[#00B894]" /> GitHub
+              </a>
+              <a
+                href="https://leetcode.com/u/Nikhilsarak/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[#1A1A1A] border border-[#2F2F2F] text-white px-5 py-3 rounded-full font-medium hover:border-[#00B894] transition-all hover:scale-105"
+              >
+                <svg className="w-5 h-5 text-[#00B894]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.653 1.653 0 0 0 0 2.227 1.653 1.653 0 0 0 2.227 0L11.476 9.53l4.847-5.163a1.374 1.374 0 0 0 0-1.944 1.374 1.374 0 0 0-1.944 0z"/>
+                </svg> LeetCode
               </a>
             </div>
           </div>
@@ -79,7 +89,7 @@ const Hero = () => {
               {/* Profile image */}
               <div className="w-72 h-72 bg-[#1A1A1A] rounded-full overflow-hidden border-4 border-[#2F2F2F] shadow-xl relative z-10 hover:scale-105 transition-all duration-300">
                 <img
-                  src="/profile-placeholder.jpg"
+                  src="/src/assets/nikhil_image.jpg"
                   alt="Nikhil Sarak"
                   className="w-full h-full object-cover"
                 />

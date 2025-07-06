@@ -301,7 +301,7 @@ const Contact = () => {
                 <h4 className="font-semibold text-lg mb-4">Connect With Me</h4>
                 <div className="flex space-x-4">
                   <motion.a 
-                    href="https://www.linkedin.com/in/nikhil-sarak-463a04256/" 
+                    href="https://www.linkedin.com/in/nikhilsarak/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="bg-[#00B894] bg-opacity-20 hover:bg-opacity-30 p-3 rounded-xl transition-all"
@@ -311,7 +311,7 @@ const Contact = () => {
                     <FaLinkedin className="text-xl text-[#00B894]" />
                   </motion.a>
                   <motion.a 
-                    href="https://github.com/Nikhil0123" 
+                    href="https://github.com/Nikhil4123" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="bg-[#00B894] bg-opacity-20 hover:bg-opacity-30 p-3 rounded-xl transition-all"
@@ -319,6 +319,18 @@ const Contact = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <FaGithub className="text-xl text-[#00B894]" />
+                  </motion.a>
+                  <motion.a 
+                    href="https://leetcode.com/u/Nikhilsarak/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-[#00B894] bg-opacity-20 hover:bg-opacity-30 p-3 rounded-xl transition-all"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <svg className="w-6 h-6 text-[#00B894]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.653 1.653 0 0 0 0 2.227 1.653 1.653 0 0 0 2.227 0L11.476 9.53l4.847-5.163a1.374 1.374 0 0 0 0-1.944 1.374 1.374 0 0 0-1.944 0z"/>
+                    </svg>
                   </motion.a>
                 </div>
               </div>

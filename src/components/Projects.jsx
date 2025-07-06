@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaCode, FaDatabase, FaServer, FaMobile, FaArrowRight } from 'react-icons/fa';
 
@@ -24,16 +25,17 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Finance Tracker Using Message Scraping",
-      description: "Our finance tracker app automatically extracts and categorizes financial transactions from SMS messages, helping users monitor expenses and income.",
+      title: "SkillRush - Flutter Education App",
+      description: "SkillRush is a Flutter-based education app that offers video courses, quizzes, and progress tracking to help users learn new skills and grow at their own pace.",
       features: [
-        "Transaction categorization", 
-        "Expense tracking", 
-        "Financial summaries for easy financial management"
+        "Video courses with interactive learning modules",
+        "Quiz system with progress tracking",
+        "Personalized learning paths and recommendations",
+        "Cross-platform mobile app (iOS & Android)"
       ],
-      techStack: ["Android", "Java", "Firebase", "Message Scraping"],
-      githubLink: "#",
-      liveLink: "",
+      techStack: ["Flutter", "Dart", "Firebase", "State Management"],
+      githubLink: "https://github.com/Nikhil4123/SkillRush-",
+      liveLink: "#",
       image: "/project-finance.jpg",
       color: "from-[#00B894] to-[#00D9A5]",
       mockup: (
@@ -43,12 +45,43 @@ const Projects = () => {
             <div className="mb-4 p-3 bg-[#00B894] bg-opacity-20 rounded-full">
               <FaMobile className="text-4xl text-[#00B894]" />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-center">PennyTracker</h3>
-            <p className="text-sm text-center max-w-xs text-[#B0B0B0]">Automated finance tracking through message scraping</p>
+            <h3 className="text-xl font-bold mb-2 text-center">SkillRush</h3>
+            <p className="text-sm text-center max-w-xs text-[#B0B0B0]">Flutter-based education app with video courses & quizzes</p>
           </div>
           <div className="absolute bottom-0 right-0 m-4 flex space-x-2">
-            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Java</span>
-            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Firebase</span>
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Flutter</span>
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Dart</span>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "PennyTracker - Finance Tracker Website",
+      description: "A comprehensive finance tracking website that helps users monitor expenses, track income, and manage their financial goals with detailed analytics and insights.",
+      features: [
+        "Automated transaction categorization from SMS messages",
+        "Real-time expense tracking and financial analytics",
+        "Interactive dashboard with charts and reports",
+        "Mobile app and web platform integration"
+      ],
+      techStack: ["React.js", "Node.js", "MongoDB", "Android", "Java"],
+      githubLink: "#",
+      liveLink: "https://www.pennytracker.tech/",
+      image: "/project-finance.jpg",
+      color: "from-[#00B894] to-[#00D9A5]",
+      mockup: (
+        <div className="relative w-full h-56 md:h-64 bg-gradient-to-r from-[#0D0D0D] to-[#1A1A1A] rounded-lg overflow-hidden shadow-lg border border-[#2F2F2F]">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/project-finance.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
+            <div className="mb-4 p-3 bg-[#00B894] bg-opacity-20 rounded-full">
+              <FaCode className="text-4xl text-[#00B894]" />
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-center">PennyTracker</h3>
+            <p className="text-sm text-center max-w-xs text-[#B0B0B0]">Comprehensive finance tracking with SMS integration</p>
+          </div>
+          <div className="absolute bottom-0 right-0 m-4 flex space-x-2">
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">MERN</span>
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Android</span>
           </div>
         </div>
       )
@@ -63,7 +96,7 @@ const Projects = () => {
         "Advanced search and filtering options"
       ],
       techStack: ["React.js", "Node.js", "MongoDB", "Socket.io", "Redis"],
-      githubLink: "https://github.com/Nikhil0123/book-selling-website",
+      githubLink: "https://github.com/Nikhil4123/book-selling-website",
       liveLink: "#",
       image: "/project-book.jpg",
       color: "from-[#00B894] to-[#00D9A5]",
@@ -94,7 +127,7 @@ const Projects = () => {
         "Employer dashboard for posting and managing job listings"
       ],
       techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Firebase"],
-      githubLink: "https://github.com/Nikhil0123/job-portal",
+      githubLink: "https://github.com/Nikhil4123/job-portal",
       liveLink: "#",
       image: "/project-job.jpg",
       color: "from-[#00B894] to-[#00D9A5]",
@@ -312,6 +345,30 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
+              
+              {/* Video Demo for PennyTracker */}
+              {projects[activeProject].title.includes("PennyTracker") && (
+                <div className="mb-6">
+                  <h4 className="font-semibold mb-3 text-white flex items-center">
+                    <span className="w-8 h-8 rounded-full bg-[#00B894] bg-opacity-20 text-[#00B894] inline-flex items-center justify-center mr-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h6l2 2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                      </svg>
+                    </span>
+                    Project Demo Video
+                  </h4>
+                  <div className="relative rounded-lg overflow-hidden border border-[#2F2F2F]">
+                    <video 
+                      controls 
+                      className="w-full h-64 object-cover"
+                      poster="/project-finance.jpg"
+                    >
+                      <source src="/finance_trackervideo.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              )}
               
               {/* Links */}
               <div className="flex gap-4">

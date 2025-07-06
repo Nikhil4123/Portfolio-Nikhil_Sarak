@@ -27,7 +27,7 @@ A modern and responsive portfolio website built with React and Tailwind CSS.
 
 1. Clone the repository
    ```
-   git clone https://github.com/Nikhil0123/my-portfolio.git
+   git clone https://github.com/Nikhil4123/my-portfolio.git
    cd my-portfolio
    ```
 

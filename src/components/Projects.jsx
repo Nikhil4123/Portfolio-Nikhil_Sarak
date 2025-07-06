@@ -25,6 +25,46 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Penny_Tracker-Finance Tracker (Website & Mobile App)",
+      description: "A comprehensive finance tracking solution with both web platform and mobile app. The system automatically extracts financial transactions from SMS messages, providing real-time expense tracking, analytics, and financial insights across both platforms.",
+      features: [
+        "Cross-platform solution: Web dashboard + Android mobile app",
+        "Automated SMS message scraping for transaction detection",
+        "Real-time expense tracking with smart categorization",
+        "Interactive web dashboard with charts, reports, and analytics",
+        "Mobile app with offline capabilities and push notifications",
+        "Synchronized data between web and mobile platforms"
+      ],
+      techStack: ["React.js", "Node.js", "Android", "Java", "Firebase","flutter"],
+      githubLink: "#",
+      liveLink: "https://www.pennytracker.tech/",
+      androidLink: "#", // Add Android app link here when available
+      image: "/project-finance.jpg",
+      color: "from-[#00B894] to-[#00D9A5]",
+      isFeatured: true, // Mark as featured project
+      mockup: (
+        <div className="relative w-full h-56 md:h-64 bg-gradient-to-r from-[#0D0D0D] to-[#1A1A1A] rounded-lg overflow-hidden shadow-lg border border-[#2F2F2F] group">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/project-finance.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
+            <div className="mb-4 p-3 bg-[#00B894] bg-opacity-20 rounded-full group-hover:scale-110 transition-transform duration-300">
+              <FaCode className="text-4xl text-[#00B894]" />
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-center">PennyTracker</h3>
+            <p className="text-sm text-center max-w-xs text-[#B0B0B0]">Web & Mobile finance tracking with SMS integration</p>
+          </div>
+          <div className="absolute bottom-0 right-0 m-4 flex space-x-2">
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">MERN</span>
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Android</span>
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Firebase</span>
+          </div>
+          {/* Featured badge */}
+          <div className="absolute top-4 left-4 bg-gradient-to-r from-[#00B894] to-[#00D9A5] text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+            ⭐ Featured Project
+          </div>
+        </div>
+      )
+    },
+    {
       title: "SkillRush - Flutter Education App",
       description: "SkillRush is a Flutter-based education app that offers video courses, quizzes, and progress tracking to help users learn new skills and grow at their own pace.",
       features: [
@@ -51,40 +91,6 @@ const Projects = () => {
           <div className="absolute bottom-0 right-0 m-4 flex space-x-2">
             <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Flutter</span>
             <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Dart</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: "PennyTracker - Finance Tracker (Website & Mobile App)",
-      description: "A comprehensive finance tracking solution with both web platform and mobile app. The system automatically extracts financial transactions from SMS messages, providing real-time expense tracking, analytics, and financial insights across both platforms.",
-      features: [
-        "Cross-platform solution: Web dashboard + Android mobile app",
-        "Automated SMS message scraping for transaction detection",
-        "Real-time expense tracking with smart categorization",
-        "Interactive web dashboard with charts, reports, and analytics",
-        "Mobile app with offline capabilities and push notifications",
-        "Synchronized data between web and mobile platforms"
-      ],
-      techStack: ["React.js", "Node.js", "MongoDB", "Android", "Java", "Firebase"],
-      githubLink: "#",
-      liveLink: "https://www.pennytracker.tech/",
-      image: "/project-finance.jpg",
-      color: "from-[#00B894] to-[#00D9A5]",
-      mockup: (
-        <div className="relative w-full h-56 md:h-64 bg-gradient-to-r from-[#0D0D0D] to-[#1A1A1A] rounded-lg overflow-hidden shadow-lg border border-[#2F2F2F]">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/project-finance.jpg')] bg-cover bg-center opacity-10"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
-            <div className="mb-4 p-3 bg-[#00B894] bg-opacity-20 rounded-full">
-              <FaCode className="text-4xl text-[#00B894]" />
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-center">PennyTracker</h3>
-            <p className="text-sm text-center max-w-xs text-[#B0B0B0]">Web & Mobile finance tracking with SMS integration</p>
-          </div>
-          <div className="absolute bottom-0 right-0 m-4 flex space-x-2">
-            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">MERN</span>
-            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Android</span>
-            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Firebase</span>
           </div>
         </div>
       )
@@ -254,7 +260,7 @@ const Projects = () => {
               <button
                 key={index}
                 onClick={() => setActiveProject(index)}
-                className={`text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md flex-1 md:flex-initial
+                className={`text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md flex-1 md:flex-initial relative
                   ${activeProject === index ? 
                     'bg-[#00B894] text-white shadow-lg' : 
                     'bg-[#1A1A1A] border border-[#2F2F2F] hover:border-[#00B894]'}`}
@@ -264,6 +270,11 @@ const Projects = () => {
                   opacity: animateProjects ? 1 : 0
                 }}
               >
+                {project.isFeatured && (
+                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#00B894] to-[#00D9A5] text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
+                    ⭐
+                  </div>
+                )}
                 <h3 className={`font-semibold ${activeProject === index ? 'text-white' : 'text-white'}`}>
                   {project.title}
                 </h3>
@@ -374,7 +385,7 @@ const Projects = () => {
               )}
               
               {/* Links */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
                 {projects[activeProject].githubLink && (
                   <a 
                     href={projects[activeProject].githubLink} 
@@ -393,7 +404,18 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-[#00B894] text-white px-4 py-2 rounded-lg hover:bg-[#00D9A5] transition-all"
                   >
-                    <FaExternalLinkAlt /> Live Demo <FaArrowRight className="ml-1" />
+                    <FaExternalLinkAlt /> Website <FaArrowRight className="ml-1" />
+                  </a>
+                )}
+                
+                {projects[activeProject].androidLink && projects[activeProject].title.includes("PennyTracker") && (
+                  <a 
+                    href={projects[activeProject].androidLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-[#1A1A1A] border border-[#2F2F2F] text-white px-4 py-2 rounded-lg hover:border-[#00B894] transition-colors"
+                  >
+                    <FaMobile className="text-[#B0B0B0]" /> Android App
                   </a>
                 )}
               </div>
@@ -418,8 +440,8 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { label: "Projects Completed", value: "15+", icon: <FaCode /> },
-              { label: "Clients Satisfied", value: "10+", icon: <FaServer /> },
-              { label: "Technologies Used", value: "20+", icon: <FaDatabase /> }
+              { label: "VNPS 1st Winner", value: "PennyTracker", icon: <FaServer /> },
+              { label: "Technologies Used", value: "20", icon: <FaDatabase /> }
             ].map((stat, index) => (
               <div key={index} className="bg-[#0D0D0D] p-6 rounded-lg border border-[#2F2F2F] text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#00B894] bg-opacity-10 mb-4">

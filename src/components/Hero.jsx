@@ -1,7 +1,19 @@
-import React from 'react';
-import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaLaptopCode, FaMobileAlt } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaLaptopCode, FaMobileAlt, FaDownload, FaEye, FaTimes } from 'react-icons/fa';
+import nikhilImage from '../assets/nikhil_image.jpg';
 
 const Hero = () => {
+  const [showResumeModal, setShowResumeModal] = useState(false);
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/resum_NikhilSarak.pdf';
+    link.download = 'Nikhil_Sarak_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="pt-32 pb-20 bg-[#0D0D0D] relative overflow-hidden w-full">
       {/* Animated background elements */}
@@ -77,6 +89,22 @@ const Hero = () => {
                   <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.653 1.653 0 0 0 0 2.227 1.653 1.653 0 0 0 2.227 0L11.476 9.53l4.847-5.163a1.374 1.374 0 0 0 0-1.944 1.374 1.374 0 0 0-1.944 0z"/>
                 </svg> LeetCode
               </a>
+              
+              {/* Resume Buttons */}
+              <div className="flex gap-2">
+                <button
+                  onClick={downloadResume}
+                  className="flex items-center gap-2 bg-[#00B894] text-white px-5 py-3 rounded-full font-medium hover:bg-[#00D9A5] transition-all hover:scale-105"
+                >
+                  <FaDownload /> Download Resume
+                </button>
+                <button
+                  onClick={() => setShowResumeModal(true)}
+                  className="flex items-center gap-2 bg-[#1A1A1A] border border-[#2F2F2F] text-white px-5 py-3 rounded-full font-medium hover:border-[#00B894] transition-all hover:scale-105"
+                >
+                  <FaEye /> View Resume
+                </button>
+              </div>
             </div>
           </div>
           
@@ -89,7 +117,7 @@ const Hero = () => {
               {/* Profile image */}
               <div className="w-72 h-72 bg-[#1A1A1A] rounded-full overflow-hidden border-4 border-[#2F2F2F] shadow-xl relative z-10 hover:scale-105 transition-all duration-300">
                 <img
-                  src="/nikhil_image.jpg"
+                  src={nikhilImage}
                   alt="Nikhil Sarak"
                   className="w-full h-full object-cover"
                 />
@@ -115,6 +143,49 @@ const Hero = () => {
           <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="fill-[#1A1A1A]"></path>
         </svg>
       </div>
+
+      {/* Resume Modal */}
+      {showResumeModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
+          <div className="bg-[#1A1A1A] rounded-xl shadow-2xl w-full max-w-4xl h-[90vh] relative">
+            {/* Modal Header */}
+            <div className="flex justify-between items-center p-6 border-b border-[#2F2F2F]">
+              <h3 className="text-xl font-bold text-white">Nikhil Sarak - Resume</h3>
+              <button
+                onClick={() => setShowResumeModal(false)}
+                className="text-[#B0B0B0] hover:text-white transition-colors p-2 rounded-lg hover:bg-[#2F2F2F]"
+              >
+                <FaTimes className="w-5 h-5" />
+              </button>
+            </div>
+            
+            {/* PDF Viewer */}
+            <div className="p-6 h-full">
+              <iframe
+                src="/resum_NikhilSarak.pdf"
+                className="w-full h-full rounded-lg border border-[#2F2F2F]"
+                title="Nikhil Sarak Resume"
+              />
+            </div>
+            
+            {/* Modal Footer */}
+            <div className="flex justify-end items-center p-6 border-t border-[#2F2F2F] gap-4">
+              <button
+                onClick={downloadResume}
+                className="flex items-center gap-2 bg-[#00B894] text-white px-4 py-2 rounded-lg hover:bg-[#00D9A5] transition-all"
+              >
+                <FaDownload /> Download PDF
+              </button>
+              <button
+                onClick={() => setShowResumeModal(false)}
+                className="flex items-center gap-2 bg-[#2F2F2F] text-white px-4 py-2 rounded-lg hover:bg-[#3F3F3F] transition-all"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

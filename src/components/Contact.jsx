@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
      import React, { useState, useEffect, useRef } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane, FaCheckCircle, FaCopy } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
@@ -119,19 +119,60 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e) => {
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('nikhilsarak612w@gmail.com');
+      setSubmitMessage({ 
+        type: 'success', 
+        message: 'Email copied to clipboard!' 
+      });
+      setTimeout(() => setSubmitMessage({ type: '', message: '' }), 3000);
+    } catch (error) {
+      setSubmitMessage({ 
+        type: 'error', 
+        message: 'Failed to copy email. Please copy manually: nikhilsarak612w@gmail.com' 
+      });
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Create mailto link with form data
+      const subject = `Portfolio Contact from ${formData.name}`;
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+      
+      const mailtoLink = `mailto:nikhilsarak612w@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Try to open default email client
+      const emailWindow = window.open(mailtoLink);
+      
+      // Check if email client opened successfully
+      if (emailWindow) {
+        setSubmitMessage({ 
+          type: 'success', 
+          message: 'Email client opened! Please send the email to complete your message.' 
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        // Fallback: copy email to clipboard
+        await copyEmail();
+        setSubmitMessage({ 
+          type: 'success', 
+          message: 'Email copied! Please send your message to nikhilsarak612w@gmail.com' 
+        });
+      }
+      
+    } catch (error) {
       setSubmitMessage({ 
-        type: 'success', 
-        message: 'Thank you for your message! I will get back to you soon.' 
+        type: 'error', 
+        message: 'Something went wrong. Please contact me directly at nikhilsarak612w@gmail.com' 
       });
-      setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   // Code decoration symbols
@@ -276,10 +317,19 @@ const Contact = () => {
                   <div className="bg-[#00B894] bg-opacity-20 p-3 rounded-xl mr-4">
                     <FaEnvelope className="text-[#00B894]" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h4 className="font-semibold text-lg">Email</h4>
                     <p className="text-[#B0B0B0]">nikhilsarak612w@gmail.com</p>
                   </div>
+                  <motion.button
+                    onClick={copyEmail}
+                    className="bg-[#00B894] bg-opacity-20 hover:bg-opacity-30 p-2 rounded-lg transition-all"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    title="Copy email to clipboard"
+                  >
+                    <FaCopy className="text-[#00B894] text-sm" />
+                  </motion.button>
                 </motion.div>
                 
                 <motion.div 

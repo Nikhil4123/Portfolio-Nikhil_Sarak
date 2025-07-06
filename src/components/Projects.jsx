@@ -56,15 +56,17 @@ const Projects = () => {
       )
     },
     {
-      title: "PennyTracker - Finance Tracker Website",
-      description: "A comprehensive finance tracking website that helps users monitor expenses, track income, and manage their financial goals with detailed analytics and insights.",
+      title: "PennyTracker - Finance Tracker (Website & Mobile App)",
+      description: "A comprehensive finance tracking solution with both web platform and mobile app. The system automatically extracts financial transactions from SMS messages, providing real-time expense tracking, analytics, and financial insights across both platforms.",
       features: [
-        "Automated transaction categorization from SMS messages",
-        "Real-time expense tracking and financial analytics",
-        "Interactive dashboard with charts and reports",
-        "Mobile app and web platform integration"
+        "Cross-platform solution: Web dashboard + Android mobile app",
+        "Automated SMS message scraping for transaction detection",
+        "Real-time expense tracking with smart categorization",
+        "Interactive web dashboard with charts, reports, and analytics",
+        "Mobile app with offline capabilities and push notifications",
+        "Synchronized data between web and mobile platforms"
       ],
-      techStack: ["React.js", "Node.js", "MongoDB", "Android", "Java"],
+      techStack: ["React.js", "Node.js", "MongoDB", "Android", "Java", "Firebase"],
       githubLink: "#",
       liveLink: "https://www.pennytracker.tech/",
       image: "/project-finance.jpg",
@@ -77,11 +79,12 @@ const Projects = () => {
               <FaCode className="text-4xl text-[#00B894]" />
             </div>
             <h3 className="text-xl font-bold mb-2 text-center">PennyTracker</h3>
-            <p className="text-sm text-center max-w-xs text-[#B0B0B0]">Comprehensive finance tracking with SMS integration</p>
+            <p className="text-sm text-center max-w-xs text-[#B0B0B0]">Web & Mobile finance tracking with SMS integration</p>
           </div>
           <div className="absolute bottom-0 right-0 m-4 flex space-x-2">
             <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">MERN</span>
             <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Android</span>
+            <span className="px-2 py-1 text-xs bg-[#00B894] bg-opacity-20 backdrop-blur-sm rounded-full text-white">Firebase</span>
           </div>
         </div>
       )

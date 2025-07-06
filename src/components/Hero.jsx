@@ -89,7 +89,7 @@ const Hero = () => {
               {/* Profile image */}
               <div className="w-72 h-72 bg-[#1A1A1A] rounded-full overflow-hidden border-4 border-[#2F2F2F] shadow-xl relative z-10 hover:scale-105 transition-all duration-300">
                 <img
-                  src="/src/assets/nikhil_image.jpg"
+                  src="/nikhil_image.jpg"
                   alt="Nikhil Sarak"
                   className="w-full h-full object-cover"
                 />

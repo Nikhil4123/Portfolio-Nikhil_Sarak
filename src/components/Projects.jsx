@@ -361,7 +361,7 @@ const Projects = () => {
               </div>
               
               {/* Video Demo for PennyTracker */}
-              {projects[activeProject].title.includes("PennyTracker") && (
+              {projects[activeProject].title.includes("Penny_Tracker") && (
                 <div className="mb-6">
                   <h4 className="font-semibold mb-3 text-white flex items-center">
                     <span className="w-8 h-8 rounded-full bg-[#00B894] bg-opacity-20 text-[#00B894] inline-flex items-center justify-center mr-2">

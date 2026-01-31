@@ -24,14 +24,21 @@ function App() {
   if (isLoading) {
     return (
       <div className="loading-screen">
-        <div className="spinner"></div>
-        <p>Loading portfolio...</p>
+        <div className="loader-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className="loader-rail">
+          <div className="loader-bar"></div>
+        </div>
+        <p className="loader-text"><span>Loading</span> portfolio...</p>
       </div>
     );
   }
 
   return (
-    <div className="app w-full">
+    <div className="app w-full min-h-screen bg-[#0D0D0D]">
       <Header />
       <main className="w-full">
         <Hero />

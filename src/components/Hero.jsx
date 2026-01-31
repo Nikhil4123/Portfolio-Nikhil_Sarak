@@ -16,39 +16,27 @@ const Hero = () => {
 
   return (
     <section id="about" className="pt-32 pb-20 bg-[#0D0D0D] relative overflow-hidden w-full">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-[#00B894] opacity-5 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#00D9A5] opacity-5 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
-        <div className="absolute bottom-40 left-1/3 w-72 h-72 bg-[#00B894] opacity-5 rounded-full blur-3xl animate-pulse-slow animation-delay-4000"></div>
-      </div>
-      
       <div className="container mx-auto px-6 relative z-10 w-full">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white leading-tight">
               Hi, I&apos;m <span className="text-gradient">Nikhil Sarak</span>
             </h1>
-            <div className="flex items-center mb-6">
-              <div className="h-1 w-20 bg-[#00B894] mr-4 rounded-full"></div>
+            <div className="flex items-center gap-3 mb-6 flex-wrap">
+              <div className="h-1 w-20 bg-[#00B894] rounded-full shrink-0"></div>
               <p className="text-white text-lg font-medium">IT Engineering Student</p>
+              <span className="text-[#6B7280]">·</span>
+              <p className="text-[#9CA3AF] text-base font-medium flex items-center gap-2">
+                <FaLaptopCode className="text-[#00B894]" />
+                <FaMobileAlt className="text-[#00B894]" />
+                Web & Mobile Developer
+              </p>
             </div>
-            <p className="text-xl mb-8 text-[#B0B0B0] leading-relaxed">
+            <p className="text-xl mb-10 text-[#B0B0B0] leading-relaxed">
               I am passionate about web development and Android app development, with expertise in
               developing complex projects using the MERN stack and mobile applications. My focus is on creating
               beautiful, functional, and user-friendly digital experiences.
             </p>
-            
-            <div className="grid grid-cols-2 gap-4 mb-10">
-              <div className="flex items-center text-[#B0B0B0]">
-                <FaLaptopCode className="mr-2 text-[#00B894]" />
-                <span>Web Developer</span>
-              </div>
-              <div className="flex items-center text-[#B0B0B0]">
-                <FaMobileAlt className="mr-2 text-[#00B894]" />
-                <span>Mobile App Developer</span>
-              </div>
-            </div>
             
             <div className="flex flex-wrap gap-4">
               <a
@@ -109,27 +97,12 @@ const Hero = () => {
           </div>
           
           <div className="md:w-1/2 flex justify-center">
-            <div className="relative">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 -m-8 bg-gradient-to-r from-[#00B894] to-[#00D9A5] rounded-full blur opacity-20 animate-pulse-slow"></div>
-              <div className="absolute inset-0 -m-4 bg-gradient-to-r from-[#00B894] to-[#00D9A5] rounded-full blur-sm opacity-30"></div>
-              
-              {/* Profile image */}
-              <div className="w-72 h-72 bg-[#1A1A1A] rounded-full overflow-hidden border-4 border-[#2F2F2F] shadow-xl relative z-10 hover:scale-105 transition-all duration-300">
-                <img
-                  src={nikhilImage}
-                  alt="Nikhil Sarak"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-[#1A1A1A] border border-[#2F2F2F] text-white px-4 py-2 rounded-full shadow-lg text-sm font-bold flex items-center rotate-6 hover:rotate-0 transition-all">
-                <FaLaptopCode className="mr-2 text-[#00B894]" /> Web Dev
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-[#1A1A1A] border border-[#2F2F2F] text-white px-4 py-2 rounded-full shadow-lg text-sm font-bold flex items-center -rotate-6 hover:rotate-0 transition-all">
-                <FaMobileAlt className="mr-2 text-[#00B894]" /> Mobile Dev
-              </div>
+            <div className="w-72 h-72 rounded-full overflow-hidden border border-[#2F2F2F] shadow-xl hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src={nikhilImage}
+                alt="Nikhil Sarak"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

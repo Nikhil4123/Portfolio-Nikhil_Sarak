@@ -77,10 +77,10 @@ const Header = () => {
         ></div>
       </div>
 
-      <header className={`fixed w-full top-1 z-40 transition-all duration-500 ease-out ${
+      <header className={`fixed w-full top-1 z-40 transition-all duration-300 ${
         scrolled 
-          ? 'bg-[#1A1A1A]/95 backdrop-blur-md py-3 shadow-2xl border-b border-[#2F2F2F]/50' 
-          : 'bg-[#0D0D0D]/80 backdrop-blur-sm py-5'
+          ? 'bg-[#0D0D0D] py-3 shadow-lg border-b border-[#2F2F2F]' 
+          : 'bg-[#0D0D0D] py-5 border-b border-[#2F2F2F]/30'
       }`}>
         <div className="container mx-auto px-6">
           <nav className="flex justify-between items-center">
@@ -101,11 +101,7 @@ const Header = () => {
                         ? 'text-[#00D9A5] bg-[#00B894]/10' 
                         : 'text-white hover:text-[#00D9A5] hover:bg-[#00B894]/5'
                     }`}
-                    style={{ 
-                      animationDelay: `${index * 100}ms`,
-                      transform: scrolled ? 'translateY(0)' : 'translateY(-10px)',
-                      opacity: scrolled ? 1 : 0
-                    }}
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <span className="flex items-center gap-2">
                       <span className="text-xs opacity-60 group-hover:opacity-100 transition-opacity">
@@ -196,8 +192,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Background blur effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D]/20 to-transparent pointer-events-none"></div>
       </header>
     </>
   );
